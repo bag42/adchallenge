@@ -1,0 +1,293 @@
+@import "_reset.scss";
+@import "_variables.scss";
+// @import "_mixins.scss";
+
+/*------------------------------------*\
+    $STYLES
+\*------------------------------------*/
+
+html {
+  background-color: $black;
+  color: $white;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: $base-font-family;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  padding: $size-default;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.music-theme {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  font-weight: 500;
+  span {
+    font-weight: 200;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  img {
+    height: 3rem;
+    margin-right: 20px;
+  }
+}
+
+.logo {
+  background: url(../images/logo.svg) no-repeat center center;
+  width: 75px;
+  height: 75px;
+}
+
+/*------------------------------------*\
+    $nav
+\*------------------------------------*/
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($black, 0.5);
+  width: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  ul {
+    padding: 1rem 0;
+  }
+  ul li {
+    display: inline-block;
+    margin: 0 1rem;
+  }
+  ul li.active {
+    border-bottom: 3px solid $secundary-color;
+  }
+  ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $white;
+    padding: 0.13rem 0;
+  }
+  ul li a:hover {
+    // transition: 0.3s ease-in-out;
+    transition: 0.3s;
+    border-bottom: 3px solid $secundary-color;
+  }
+  @media (min-width: 35em) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+/*------------------------------------*\
+    $hero
+\*------------------------------------*/
+
+.hero {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-weight: 300;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+  }
+  h1.music-theme {
+    font-size: 4rem;
+    line-height: 4rem;
+    display: block;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+  }
+  &::before {    
+      content: "";
+      background: url(../images/hero.jpg) no-repeat center center;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.75;
+      z-index: -1;
+  }
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $white;
+  padding: 0;
+  opacity: 0.3;
+  width: 57%;
+  margin: 1em auto;
+}
+
+.btn {
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: $size-default $size-default*3;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  font-size: 0.75rem;
+  &.btn-primary {
+    color: $white;
+    background-color: $primary-color;
+  }
+  &:hover {
+    background-color: $black;
+    transition: 0.3s;
+    // transition: 0.3s ease-in-out;
+    border: 1px solid $white;
+  }
+}
+
+button:focus {
+  outline: none;
+}
+
+/*------------------------------------*\
+    $section
+\*------------------------------------*/
+
+section {
+  min-height: 100vh;
+  padding: 10%;
+  .container {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+}
+
+section#news {
+  background-color: $black;
+}
+
+section#events {
+  background-color: $dark-blue;
+}
+
+section#about {
+  background-color: $black;
+}
+
+.section-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 15%;
+    height: 1px;
+    bottom: -10px;
+    left: 0;
+    margin-top: 0.3rem;
+    border-bottom: 3px solid $secundary-color;
+  }
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: 35em) {
+    display: flex;
+    flex-direction: row;
+    justify-content: top;
+  }
+}
+
+.card {
+  min-height: 0;
+  // border: 1px solid $medium-gray;
+  img {
+    width: 100%;
+  }
+  margin-right: 1rem;
+}
+
+.card-title {
+  padding: 1rem;
+}
+
+.card-text {
+  padding: 1rem;
+  font-size: $size-default*0.75;
+}
+
+.one {
+  background: url(../images/music1.png) no-repeat center center;
+  width: 100%;
+  height: 180px;
+}
+.two {
+  background: url(../images/music2.png) no-repeat center center;
+  width: 100%;
+  height: 180px;
+}
+.three {
+  background: url(../images/music3.png) no-repeat center center;
+  width: 100%;
+  height: 180px;
+}
+
+.event-image {
+  background: url(../images/event-photo.png) no-repeat center center;
+  width: 100%;
+  height: 400px;
+  margin-top: 1rem;
+}
+
+.about-image {
+  background: url(../images/music-about.png) no-repeat center center;
+  width: 100%;
+  height: 400px;
+}
+
+/*------------------------------------*\
+    $footer
+\*------------------------------------*/
+
+footer {
+  background-color: $light-dark-blue;
+  font-size: 0.75rem;
+  text-align: center;
+
+  & > * {
+    padding: 1rem;
+  }
+
+  .links {
+    background-color: $dark-blue;
+    display: flex;
+    justify-content: center;
+  }
+
+  a {
+    text-transform: uppercase;
+    color: $white;
+    padding: 1rem;
+  }
+}
